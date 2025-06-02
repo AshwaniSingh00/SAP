@@ -1,0 +1,200 @@
+<mvc:View controllerName="project1.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+     xmlns:core="sap.ui.core"
+     >
+    <Page id="page" title="Login Page">
+<VBox class="Interface" >
+<VBox class="main">
+ <Panel 
+  headerText="User Detail"
+  class="main"
+  expandable="true"
+  expanded="false"
+    >
+    <content>
+    <VBox>
+    <Text text="FILL YOUR DETAILS" textAlign="Center"></Text>
+    <Avatar 
+    displayShape="Circle"
+    displaySize="S"
+    icon="sap-icon://employee"
+    ></Avatar>
+   <Label  text="Name" required="true" labelFor="name"></Label>
+    <Input id="name"  placeholder="Enter your name"
+    showValueHelp="true"
+    valueHelpRequest="onValueHelpRequest"
+    />
+     <Label text="Age" required="true" labelFor="age"></Label>
+    <Input type="Number" id="age" placeholder="Enter your age"/>
+   
+    <Label text="Gender" required="true" textAlign="Right" labelFor="gender" ></Label>
+     <RadioButtonGroup
+     id="gender"
+     columns="1">
+     <buttons>
+     <RadioButton text="Male" selected="true"></RadioButton>
+     <RadioButton text="Female"></RadioButton>
+     </buttons>
+     </RadioButtonGroup>
+      </VBox>
+    <Label text="D.O.B" required="true" labelFor="dob"></Label>
+    <DatePicker id="dob" displayFormat="yy-mm-dd"></DatePicker>
+    <VBox >
+    <Label text="Address"  labelFor="address"></Label>
+    <TextArea 
+    id="address"
+    placeholder="Address"
+    rows="5"
+    cols="40"
+    ></TextArea>
+    </VBox>
+     
+    </content>
+    </Panel>
+    </VBox>
+   <VBox id="cousre">
+   <Panel
+   headerText="Course"
+   class="course"
+    expandable="true"
+  
+    >
+    <VBox >
+    <Label text="Choose Course" required="true" labelFor="courseComboBox"></Label>
+    <ComboBox id="courseComboBox"
+    placeholder="Choose course" >
+            <items>
+                <core:Item key="1" text="BTECH" />
+                <core:Item key="2" text="MTECH" />
+                <core:Item key="3" text="BSc" />
+            </items>
+        </ComboBox>
+        </VBox>
+     <VBox >
+     <Label text="Chose Subjects" required="true"></Label>
+        <CheckBox text="O.S"  />
+         <CheckBox text="DSA" />
+        <CheckBox text="MATHS"  />
+        <CheckBox text="DBMS" />
+       </VBox>
+
+   </Panel>
+   </VBox>
+    <Button text="Sign In" press=".onsignin"></Button>
+    <VBox class="our details">
+    <Panel 
+    headerText="Our Details"
+    class="our details"
+    >
+    <Text text="WELCOME TO OUR UNIVERSITY"></Text>
+    <ObjectIdentifier 
+    title="GLA UNIVERSITY"
+    text="SECURE YOUR FUTURE"
+    ></ObjectIdentifier>
+    <VBox >
+    <Text text="Our Rating"></Text>
+    <RatingIndicator 
+    maxValue="5"
+    value="4"
+    ></RatingIndicator>
+    </VBox>
+    <VBox >
+    <Text text="Placement Details"></Text>
+    <ProgressIndicator 
+    percentValue="92"
+    displayValue="92%"
+    ></ProgressIndicator>
+    </VBox>
+    </Panel>
+    </VBox>
+    <VBox class="product">
+    <Panel 
+    headerText="Product Details"
+    class="product">
+    <HBox >
+    <VBox >
+    <ObjectIdentifier title="Product"></ObjectIdentifier>
+
+   <Label text="Product:"></Label>
+   <Input type="Text"></Input>
+    <Label text="Category:"></Label>
+     <ComboBox id="category"
+    placeholder="Projector(Pr)" >
+            <items>
+           </items>
+        </ComboBox>
+     <Label text="Description"  labelFor="dis"></Label>
+    <TextArea 
+    id="dis"
+    placeholder="A very power full projector.."
+    rows="2"
+    cols="30"
+    ></TextArea>
+    <Label text="Price"></Label>
+    <HBox >
+    <Input type="Number" placeholder="856.49"></Input>
+    <ComboBox 
+    placeholder="EUR"></ComboBox>
+    </HBox>
+   </VBox>
+   <VBox >
+   <ObjectIdentifier title="Supplier"></ObjectIdentifier>
+   <Label text="Supplier:"></Label>
+   <Input type="text" placeholder="Titanium (SU2938)"></Input>
+   <Label text="Status:"></Label>
+   <ComboBox 
+   placeholder="Available"></ComboBox>
+   
+   
+   <VBox >
+   <Label text="Quantitiy"></Label>
+   <HBox>
+    <Input type="Number" placeholder="3"></Input>
+    <ComboBox 
+    placeholder="PC"
+    ></ComboBox>
+    </HBox>
+    </VBox>
+    </VBox>
+    <VBox >
+     <ObjectIdentifier title="Specification"></ObjectIdentifier>
+     <Label text="Size(cm)"></Label>
+     <HBox >
+     <Input type="Number" placeholder="51"></Input>
+     <Label text="X"></Label>
+     <Input type="Number" placeholder="42"></Input>
+      <Label text="X"></Label>
+      <Input type="Number" placeholder="18"></Input>
+       </HBox>
+    <Label text="Weight:"></Label>
+    <HBox >
+    <Input type="Number" placeholder="1,476"></Input>
+    <ComboBox 
+    placeholder="g"
+    ></ComboBox>
+    </HBox>
+    </VBox>
+    </HBox>
+    </Panel>
+    </VBox>
+    
+   </VBox>
+   <VBox >
+   <List 
+   id="ProductList"
+   items="{/products}"
+   >
+   <StandardListItem id="_IDGenStandardListItem" 
+   title="{name}"
+   description="{category}"
+   icon="sap-icon://product"
+   type="Active"
+   press="onItemPress"
+   />
+   </List>
+   </VBox>
+       </Page>
+    
+
+</mvc:View>
