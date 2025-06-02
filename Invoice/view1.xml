@@ -1,0 +1,42 @@
+<mvc:View controllerName="invoice.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+    <content>
+    <VBox >
+    <Input id="productId" type="Number" placeholder="Enter Product ID(1-3)"></Input>
+    <Input id="rate" type="Number" placeholder="Rate Of Product"></Input>
+    <Input type="Number" placeholder="Enter Quantity" id="quant"></Input>
+    <Button text="Add Product" press="onAdd"></Button>
+     <Table 
+    headerText="Product List"
+    id="product"
+    items="{/product}">
+    <columns>
+    <Column > <Text text="Product Id"></Text></Column>
+    <Column ><Text text="Rate"></Text></Column>
+        <Column > <Text text="Quantity"></Text></Column>
+    <Column ><Text text="Total"></Text></Column>
+        <Column > <Text text="GST"></Text></Column>
+    <Column ><Text text="Net Total"></Text></Column>
+        <Column > <Text text="Discount"></Text></Column>
+    <Column ><Text text="Final Total"></Text></Column>
+</columns>
+<items>
+<ColumnListItem >
+<cells>
+<Text text="{productId}"></Text>
+<Text text="{rate}"></Text>
+<Text text="{quantity}"></Text>
+<Text text="{total}"></Text>
+<Text text="{gst}"></Text>
+<Text text="{netTotal}"></Text>
+<Text text="{discount}"></Text>
+<Text text="{finalTotal}"></Text>
+</cells>
+</ColumnListItem></items>
+    </Table>
+    </VBox>
+    </content>
+    </Page>
+</mvc:View>
