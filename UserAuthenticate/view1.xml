@@ -1,0 +1,16 @@
+<mvc:View controllerName="project2.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+     
+     >
+    <Page id="page" title="{i18n>title}">
+    <VBox id="box">
+    <Label text="User Name" id="username" required="true" ></Label>
+    <Input placeholder="Enter UserName" type="Text" ></Input>
+    <Label text="Password"  required="true" ></Label>
+    <Input type="Password" placeholder="Password" id="password" ></Input>
+    <Button  press=".onSignIn" text="Sign In"></Button>
+    
+    </VBox>
+    </Page>
+</mvc:View>
