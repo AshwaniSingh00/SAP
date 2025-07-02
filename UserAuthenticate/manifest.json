@@ -1,0 +1,112 @@
+//route and tagrget is change to navigate from one page to another
+{
+  "_version": "1.65.0",
+  "sap.app": {
+    "id": "project2",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{Title}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:basic",
+      "version": "1.17.6",
+      "toolsId": "3faa6c7f-8c32-4ae0-80dc-78eec4250791"
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": true,
+    "dependencies": {
+      "minUI5Version": "1.136.1",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "project2.i18n.i18n"
+        }
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "controlAggregation": "pages",
+        "controlId": "app",
+        "transition": "slide",
+        "type": "View",
+        "viewType": "XML",
+        "path": "project2.view",
+        "async": true,
+        "viewPath": "project2.view"
+      },
+      "routes": [           //here is the change in route
+        {
+          "pattern": "",
+          "name": "View1",
+          "target":"View1"
+        },
+        {
+          "pattern": "View2",
+          "name": "View2",
+          "target":"View2"
+        },
+        {
+          "pattern": "View3",
+          "name": "View3",
+          "target":"View3"
+        }
+      ],
+      "targets": {    // change in target
+       "View1":{
+        "viewName": "View1"
+        },
+        "View2":{
+        "viewName": "View2"
+       },
+       "View3":{
+       "viewName": "View3"
+      }
+      }
+    },
+    "rootView": {
+      "viewName": "project2.view.App",
+      "type": "XML",
+      "id": "App",
+      "async": true
+    }
+  }
+}
