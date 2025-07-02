@@ -1,1 +1,57 @@
+<mvc:View controllerName="project2.controller.View3"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="page2" title="Welcome To Your Profile" >
+    <VBox id="main">
 
+    <Label id="idemp" text="Employ Id"></Label>
+    <Input id="inputid" type="Number" placeholder="Enter Employ Id 1-3"></Input>
+    <Label id="salary" text="Basic Salary"></Label>
+    <Input id="inputsalary" type="Number" placeholder="Enter The Basic Salary Of Employ"></Input>
+    <Label id="leavet" text="Leave"></Label>
+    <Input id="inputleave" type="Number" placeholder="Enter The Leave in Days"></Input>
+    <Label id="ott" text="OverTime"></Label>
+    <Input id="inputot" type="Number" placeholder="Enter The OverTime in Days"></Input>
+    <Label id="amot" text="Overtime Amount"></Label>
+    <Input id="inputamount" type="Number" placeholder="Enter The Amount For OT"></Input>
+    <Button id="confirm" text="Confirm" press="onconfirm"></Button>
+    <Table id="salarytable"
+    headerText="Salary Slip"
+    items="{/employ}"
+    >
+    <columns>
+    <Column id="id"> <Text id="empidtext" text="Employ Name"></Text></Column>
+     <Column id="basicsalary"> <Text id="salarytext" text="Salary"></Text></Column>
+      <Column id="hra"> <Text id="hratext" text="30% HRA"></Text></Column>
+       <Column id="taf"> <Text id="taftext" text="25% TAF"></Text></Column>
+        <Column id="daf"> <Text id="daftext" text="20% DAF"></Text></Column>
+         <Column id="pf"> <Text id="pftext" text="12% PF"></Text></Column>
+          <Column id="grosssalary"> <Text id="grosstext" text="Gross Salary"></Text></Column>
+          <Column id="leaveamount"> <Text id="leave" text="Leave Amount"></Text></Column>
+          <Column id="over"> <Text id="ot" text="Overtime Amount"></Text></Column>
+           <Column id="nettotal"> <Text id="nt" text="Net Total"></Text></Column>
+
+    </columns>
+    <items>
+<ColumnListItem >
+<cells>
+<Text text="{employId}"></Text>
+<Text text="{salary}"></Text>
+<Text text="{hra}"></Text>
+<Text text="{taf}"></Text>
+<Text text="{daf}"></Text>
+<Text text="{pf}"></Text>
+<Text text="{grosssalary}"></Text>
+<Text text="{leaveamount}"></Text>
+<Text text="{ot}"></Text>
+<Text text="{nettotal}"></Text>
+
+</cells>
+</ColumnListItem></items>
+    </Table>
+     </VBox>
+    <Button text="Get Product Invoice" press="onproductadd"></Button>
+    <Button text="Back" press="onpress"></Button>
+   
+    </Page>
+</mvc:View>
