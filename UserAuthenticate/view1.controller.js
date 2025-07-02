@@ -36,7 +36,7 @@ sap.ui.define([
             this.validate(inPass);
             if(this.validate(inPass))
             {
-                this.getOwnerComponent().getRouter().navTo("View2");
+                this.getOwnerComponent().getRouter().navTo("View3");
             }
             
         }
