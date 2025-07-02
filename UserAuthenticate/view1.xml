@@ -3,7 +3,7 @@
     xmlns="sap.m"
      
      >
-    <Page id="page" title="{i18n>title}">
+    <Page id="page" title="User Authenticate">
     <VBox id="box">
     <Label text="User Name" id="username" required="true" ></Label>
     <Input placeholder="Enter UserName" type="Text" ></Input>
